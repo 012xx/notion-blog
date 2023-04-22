@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { siteConfig } from "@/site.config";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
           aria-label="breadcrumb"
         >
           <Link href="/" className="text-gray-500 hover:text-gray-600">
-            びきニキの日々是好日
+            {siteConfig.title}
           </Link>
           {/* Breadcrumb */}
         </div>
