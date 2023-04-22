@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { LayoutProps } from "@/types/types";
 
-const Layout = () => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="relative overflow-hidden">
       <div className="flex flex-col items-center max-2xl w-full mx-auto">
         <Header />
-        {/* <main></main> */}
+        <main className="w-full pb-12 px-4">{children}</main>
         <Footer />
       </div>
     </div>
