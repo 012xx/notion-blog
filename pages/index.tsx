@@ -10,9 +10,11 @@ import { sampleCards } from "../utils/sample";
 const Home: NextPage = () => {
   return (
     <Layout>
-      <div className="grid md:gap-10 mt-10 md:grid-cols-3 w-full my-12 px-20">
+      <div className="grid md:grid-cols-2 w-full gap-9">
         {sampleCards.map((page) => (
-          <Card key={page.slug} page={page} />
+          <span className="justify-items-center">
+            <Card key={page.slug} page={page} />
+          </span>
         ))}
       </div>
     </Layout>

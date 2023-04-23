@@ -6,7 +6,7 @@ import { CardProps } from "../types/types";
 const Card = ({ page }: CardProps) => {
   return (
     <Link href="">
-      <span className="flex justify-center ">
+      <span className="flex justify-center">
         <div className="max-w-sm rounded overflow-hidden shadow-lg w-full my-4 md:my-0 content-between grid">
           {/* image */}
           <div>
