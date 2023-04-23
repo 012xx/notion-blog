@@ -8,7 +8,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="relative overflow-hidden">
       <div className="flex flex-col items-center max-2xl w-full mx-auto">
         <Header />
-        <main className="w-full pb-12 px-4">{children}</main>
+        <main className="w-full pb-12 px-40">{children}</main>
         <Footer />
       </div>
     </div>

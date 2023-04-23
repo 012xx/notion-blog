@@ -1,7 +1,7 @@
 import { siteConfig } from "@/site.config";
 import React from "react";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className="text-center bg-gray-900 text-white w-screen block">
       <div className="container px-6 pt-6 flex flex-col items-center max-w-2xl w-full mx-auto">
@@ -80,4 +80,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
