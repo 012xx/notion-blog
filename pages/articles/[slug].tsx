@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 const Article = () => {
   return (
     <Layout>
-      <article className="w-full">
+      <article className="w-full md:px-16 xl:px-80">
         {/* meta section */}
         <div className="my-12">
           {/* page cover */}
