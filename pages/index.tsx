@@ -9,15 +9,13 @@ import { sampleCards } from "../utils/sample";
 
 const Home: NextPage = () => {
   return (
-    <div className="overflow-hidden">
-      <Layout>
-        <div className="grid md:grid-cols-2 w-full md:gap-7 md:px-32 xl:px-80">
-          {sampleCards.map((page) => (
-            <Card key={page.slug} page={page} />
-          ))}
-        </div>
-      </Layout>
-    </div>
+    <Layout>
+      <div className="grid md:grid-cols-2 w-full md:gap-7 md:px-32 xl:px-80">
+        {sampleCards.map((page) => (
+          <Card key={page.slug} page={page} />
+        ))}
+      </div>
+    </Layout>
   );
 };
 

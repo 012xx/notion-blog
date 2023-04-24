@@ -5,7 +5,7 @@ import { LayoutProps } from "@/types/types";
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <main className="pb-12 px-8">{children}</main>
       <Footer />
