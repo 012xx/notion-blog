@@ -24,3 +24,12 @@ export const getDate = (data: { start: string }) => {
   }
   return "-";
 };
+
+export const getMultiSelect = (multiSelect: [{ name: string }]) => {
+  try {
+    return multiSelect.map((tag) => tag.name);
+  } catch (error) {
+    console.error(error)
+  }
+  return [];
+};
