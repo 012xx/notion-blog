@@ -15,3 +15,12 @@ export const getCover = (cover: PageType["cover"]) => {
   if (cover && cover.external) return cover.external.url;
   return "/noimage.png";
 };
+
+export const getDate = (data: { start: string }) => {
+  try {
+    return data.start;
+  } catch (error) {
+    console.log(error);
+  }
+  return "-";
+};
