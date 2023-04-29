@@ -15,9 +15,7 @@ export type PageProps = {
   content: string;
 };
 
-export type CardProps = {
-  page: PageProps;
-};
+export type CardProps = { page: PageType };
 export type ArticleProps = CardProps;
 export type ArticleMetaProps = CardProps;
 

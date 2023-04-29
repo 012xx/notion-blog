@@ -19,12 +19,11 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage<IndexProps> = ({ pages }) => {
-  console.log(pages);
   return (
     <Layout>
       <div className="grid md:grid-cols-2 w-full md:gap-7 md:px-32 xl:px-80">
-        {sampleCards.map((page) => (
-          <Card key={page.slug} page={page} />
+        {pages.map((page) => (
+          <Card key={page.id} page={page} />
         ))}
       </div>
     </Layout>
