@@ -1,4 +1,4 @@
-import { RichTextType } from "@/types/types";
+import { RichTextType, PageType } from "@/types/types";
 
 export const getText = (richTextArr: RichTextType[]) => {
   try {
@@ -8,4 +8,10 @@ export const getText = (richTextArr: RichTextType[]) => {
     console.log(error);
   }
   return "";
+};
+
+export const getCover = (cover: PageType["cover"]) => {
+  if (cover && cover.file) return cover.file.url;
+  if (cover && cover.external) return cover.external.url;
+  return "/noimage.png";
 };
