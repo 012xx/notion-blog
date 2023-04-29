@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Card from "../components/Card";
 import Layout from "../components/Layout";
-import { siteConfig } from "../site.config";
+import { IndexProps } from "../types/types";
 import { sampleCards } from "../utils/sample";
 import { fetchPages } from "@/utils/notion";
 
@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Home: NextPage = ({ pages }) => {
+const Home: NextPage<IndexProps> = ({ pages }) => {
   console.log(pages);
   return (
     <Layout>
