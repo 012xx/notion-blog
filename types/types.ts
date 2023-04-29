@@ -57,6 +57,5 @@ export type PropertyType = {
 export type PageType = {
   id: string;
   cover: FileType | null;
-  // properties: Record<string, any>;
   properties: PropertyType;
 };
