@@ -9,7 +9,7 @@ import { sampleCards } from "../utils/sample";
 import { fetchPages } from "@/utils/notion";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { results } = await fetchPages();
+  const { results } = await fetchPages({});
   return {
     props: {
       pages: results ? results : [],

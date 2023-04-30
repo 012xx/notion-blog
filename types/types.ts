@@ -16,7 +16,10 @@ export type PageProps = {
 };
 
 export type CardProps = { page: PageType };
-export type ArticleProps = CardProps;
+export type ArticleProps = {
+  page: PageType;
+  blocks: BlockType[];
+};
 export type ArticleMetaProps = CardProps;
 
 export type IndexProps = { pages: PageType[] };
@@ -58,4 +61,11 @@ export type PageType = {
   id: string;
   cover: FileType | null;
   properties: PropertyType;
+};
+
+export type BlockType = {
+  type: string;
+  heading_1: { text: RichTextType[] };
+  heading_2: { text: RichTextType[] };
+  paragraph: { text: RichTextType[] };
 };
