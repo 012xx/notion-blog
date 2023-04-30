@@ -24,6 +24,8 @@ export type ArticleMetaProps = CardProps;
 
 export type IndexProps = { pages: PageType[] };
 
+export type BlockProps = { block: BlockType };
+
 export type Params = ParsedUrlQuery & {
   slug: string;
 };
@@ -65,7 +67,7 @@ export type PageType = {
 
 export type BlockType = {
   type: string;
-  heading_1: { text: RichTextType[] };
-  heading_2: { text: RichTextType[] };
-  paragraph: { text: RichTextType[] };
+  heading_1: { rich_text: RichTextType[] };
+  heading_2: { rich_text: RichTextType[] };
+  paragraph: { rich_text: RichTextType[] };
 };
