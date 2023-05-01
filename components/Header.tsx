@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { siteConfig } from "@/site.config";
+import Breadcrumb from "./Breadcrumb";
 
 const Header = () => {
   return (
@@ -14,6 +15,7 @@ const Header = () => {
             {siteConfig.title}
           </Link>
           {/* Breadcrumb */}
+          <Breadcrumb />
         </div>
       </div>
     </nav>
