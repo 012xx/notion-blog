@@ -37,8 +37,8 @@ export const fetchPages = async ({
   if (tag) {
     and.push({
       property: "tags",
-      rich_text: {
-        equals: tag,
+      multi_select: {
+        contains: tag,
       },
     });
   }
@@ -57,8 +57,6 @@ export const fetchPages = async ({
   });
 };
 
-export const fetchBlockByPageId = async (pageId: string) => {
-  return await notion.blocks.children.list({
-    block_id: pageId,
-  });
+export const fetchBlocksByPageId = async (pageId: string) => {
+  return await notion.blocks.children.list({ block_id: pageId });
 };

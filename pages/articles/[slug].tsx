@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 import ArticleMeta from "@/components/ArticleMeta";
 import { GetStaticProps, NextPage } from "next";
 import { ArticleProps, Params } from "@/types/types";
-import { fetchBlockByPageId, fetchPages } from "@/utils/notion";
+import { fetchBlocksByPageId, fetchPages } from "@/utils/notion";
 import { getText } from "@/utils/property";
 import NotionBlocks from "notion-block-renderer";
 import { qtcreatorDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { results } = await fetchPages({ slug: slug });
   const page = results[0];
   const pageId = page.id;
-  const { results: blocks } = await fetchBlockByPageId(pageId);
+  const { results: blocks } = await fetchBlocksByPageId(pageId);
 
   return { props: { page: page, blocks: blocks }, redirect: 10 };
 };

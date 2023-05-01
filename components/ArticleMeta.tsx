@@ -2,6 +2,7 @@ import { ArticleMetaProps } from "@/types/types";
 import { getCover, getDate, getMultiSelect, getText } from "@/utils/property";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const ArticleMeta = ({ page }: ArticleMetaProps) => {
   return (
@@ -38,7 +39,11 @@ const ArticleMeta = ({ page }: ArticleMetaProps) => {
             {/* change later */}
             {getMultiSelect(page.properties.tags.multi_select).map(
               (tag: string) => (
-                <span key={tag}>{`#${tag} `}</span>
+                <Link key={tag} href={`/tags/${tag}`}>
+                  <span className="text-gray-700 no-underline border-b border-solid border-gray-700 opacity-70 mr-3">
+                    <span>{`#${tag}`}</span>
+                  </span>
+                </Link>
               )
             )}
           </div>
