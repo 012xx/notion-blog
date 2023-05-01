@@ -8,14 +8,16 @@ const Breadcrumb = () => {
   return (
     <>
       {router.asPath.split("/").map((path) => {
-        joinedPath += `${path}/`;
-        return (
-          <Link key={path} href={`/${joinedPath}`}>
-            <span className="text-gray-500 hover:text-gray-600">
-              <span className="text-gray-500 mx-2">/</span> {path}
-            </span>
-          </Link>
-        );
+        if (path) {
+          joinedPath += `${path}/`;
+          return (
+            <Link key={path} href={`/${joinedPath}`}>
+              <span className="text-gray-500 hover:text-gray-600">
+                <span className="text-gray-500 mx-2">/</span> {path}
+              </span>
+            </Link>
+          );
+        }
       })}
     </>
   );
