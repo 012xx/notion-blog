@@ -6,6 +6,7 @@ import { ArticleProps, Params } from "@/types/types";
 import { fetchBlockByPageId, fetchPages } from "@/utils/notion";
 import { getText } from "@/utils/property";
 import NotionBlocks from "notion-block-renderer";
+import { qtcreatorDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 export const getStaticPaths = async () => {
   const { results } = await fetchPages({});
@@ -47,7 +48,11 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
           <Block key={block} block={block}/>
         }}</div> */}
         <div className="my-12">
-          <NotionBlocks blocks={blocks} />
+          <NotionBlocks
+            blocks={blocks}
+            isCodeHighlighter={true}
+            syntaxHighlighterCSS={qtcreatorDark}
+          />
         </div>
       </article>
     </Layout>
