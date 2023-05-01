@@ -5,6 +5,7 @@ import { GetStaticProps, NextPage } from "next";
 import { ArticleProps, Params } from "@/types/types";
 import { fetchBlockByPageId, fetchPages } from "@/utils/notion";
 import { getText } from "@/utils/property";
+import NotionBlocks from "notion-block-renderer";
 
 export const getStaticPaths = async () => {
   const { results } = await fetchPages({});
@@ -42,7 +43,12 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
         </div>
 
         {/* article */}
-        {/* <div className="my-12">article ${page.content}</div> */}
+        {/* <div className="my-12">{blocks.map(block) =>{
+          <Block key={block} block={block}/>
+        }}</div> */}
+        <div className="my-12">
+          <NotionBlocks blocks={blocks} />
+        </div>
       </article>
     </Layout>
   );

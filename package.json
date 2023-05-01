@@ -23,6 +23,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@notionhq/client": "1.0.4"
+    "@notionhq/client": "1.0.4",
+    "notion-block-renderer": "^2.3.13"
   }
 }
