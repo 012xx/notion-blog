@@ -43,10 +43,6 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
           <ArticleMeta page={page} />
         </div>
 
-        {/* article */}
-        {/* <div className="my-12">{blocks.map(block) =>{
-          <Block key={block} block={block}/>
-        }}</div> */}
         <div className="my-12">
           <NotionBlocks
             blocks={blocks}
