@@ -9,7 +9,7 @@ const ArticleMeta = ({ page }: ArticleMetaProps) => {
     <>
       {/* page cover */}
       <Image
-        className="w-full static h-auto object-cover rounded-lg"
+        className="object-cover w-full rounded-lg"
         src={getCover(page.cover)}
         alt=""
         width={640}

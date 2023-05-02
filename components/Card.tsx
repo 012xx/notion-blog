@@ -13,7 +13,7 @@ const Card = ({ page }: CardProps) => {
           <div>
             {" "}
             <Image
-              className="w-full static h-auto"
+              className="object-cover h-52 w-full"
               src={getCover(page.cover)}
               alt=""
               width={400}

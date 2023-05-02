@@ -13,7 +13,7 @@ export const getText = (richTextArr: RichTextType[]) => {
 export const getCover = (cover: PageType["cover"]) => {
   if (cover && cover.file) return cover.file.url;
   if (cover && cover.external) return cover.external.url;
-  return "/noimage.png";
+  return "/notImage.png";
 };
 
 export const getDate = (data: { start: string }) => {
@@ -29,7 +29,7 @@ export const getMultiSelect = (multiSelect: [{ name: string }]) => {
   try {
     return multiSelect.map((tag) => tag.name);
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
   return [];
 };
