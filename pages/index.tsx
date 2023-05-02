@@ -1,18 +1,25 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import type { GetStaticProps, NextPage } from "next";
 import Card from "../components/Card";
 import Layout from "../components/Layout";
-import { siteConfig } from "../site.config";
-import { sampleCards } from "../utils/sample";
+import { IndexProps } from "../types/types";
+import { fetchPages } from "@/utils/notion";
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const { results } = await fetchPages({});
+  return {
+    props: {
+      pages: results ? results : [],
+    },
+    revalidate: 10,
+  };
+};
+
+const Home: NextPage<IndexProps> = ({ pages }) => {
   return (
     <Layout>
       <div className="grid md:grid-cols-2 w-full md:gap-7 md:px-32 xl:px-80">
-        {sampleCards.map((page) => (
-          <Card key={page.slug} page={page} />
+        {pages.map((page) => (
+          <Card key={page.id} page={page} />
         ))}
       </div>
     </Layout>
