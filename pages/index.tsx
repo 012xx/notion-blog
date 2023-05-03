@@ -1,16 +1,15 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Card from "../components/Card";
 import Layout from "../components/Layout";
 import { IndexProps } from "../types/types";
 import { fetchPages } from "@/utils/notion";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const { results } = await fetchPages({});
   return {
     props: {
       pages: results ? results : [],
     },
-    revalidate: 10,
   };
 };
 

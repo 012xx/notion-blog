@@ -1,29 +1,13 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import ArticleMeta from "@/components/ArticleMeta";
-import { GetStaticProps, NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import { ArticleProps, Params } from "@/types/types";
 import { fetchBlocksByPageId, fetchPages } from "@/utils/notion";
-import { getText } from "@/utils/property";
 import NotionBlocks from "notion-block-renderer";
 import { qtcreatorDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
-export const getStaticPaths = async () => {
-  const { results } = await fetchPages({});
-  const paths = results.map((page: any) => {
-    return {
-      params: {
-        slug: getText(page.properties.slug.rich_text),
-      },
-    };
-  });
-  return {
-    paths: paths,
-    fallback: "blocking",
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { slug } = context.params as Params;
 
   const { results } = await fetchPages({ slug: slug });
