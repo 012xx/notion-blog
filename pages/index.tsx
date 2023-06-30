@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       pages: results ? results : [],
     },
-    revalidate: 60*60*1000, // 1 hour
+    revalidate: 60*30*1000, // 1 hour // ss:mm:mmを直すやつ
   };
 };
 
