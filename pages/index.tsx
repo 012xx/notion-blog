@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       pages: results ? results : [],
     },
-    revalidate: 10,
+    revalidate: 60*60*1000, // 1 hour
   };
 };
 
