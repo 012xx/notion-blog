@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CardProps } from "../types/types";
@@ -12,13 +11,12 @@ const Card = ({ page }: CardProps) => {
           {/* image */}
           <div>
             {" "}
-            <Image
+            <img
               className="object-cover h-52 w-full"
               src={getCover(page.cover)}
               alt=""
               width={400}
               height={225}
-              quality={30}
             />
           </div>
 

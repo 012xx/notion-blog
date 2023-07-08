@@ -1,6 +1,5 @@
 import { ArticleMetaProps } from "@/types/types";
 import { getCover, getDate, getMultiSelect, getText } from "@/utils/property";
-import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 
@@ -8,13 +7,12 @@ const ArticleMeta = ({ page }: ArticleMetaProps) => {
   return (
     <>
       {/* page cover */}
-      <Image
+      <img
         className="object-cover w-full rounded-lg"
         src={getCover(page.cover)}
         alt=""
         width={640}
         height={360}
-        quality={50}
       />
 
       {/* page name */}
