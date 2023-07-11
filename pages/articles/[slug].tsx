@@ -31,7 +31,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const pageId = page.id;
   const { results: blocks } = await fetchBlocksByPageId(pageId);
 
-  return { props: { page: page, blocks: blocks }, redirect: 10 };
+  return { props: { page: page, blocks: blocks }, revalidate: 60*60*1000, // 1 hour // ss:mm:mmを直すやつ
+};
 };
 
 const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
