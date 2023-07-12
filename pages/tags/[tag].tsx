@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       pages: results ? results : [],
       tag: tag,
     },
-    revalidate: 60 // 秒単位
+    revalidate: 60*60 // 秒単位
   };
 };
 
