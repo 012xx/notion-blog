@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const pageId = page.id;
   const { results: blocks } = await fetchBlocksByPageId(pageId);
 
-  return { props: { page: page, blocks: blocks }, revalidate: 60*60*1000, // 1 hour // ss:mm:mmを直すやつ
+  return { props: { page: page, blocks: blocks }, revalidate: 60 // 秒単位
 };
 };
 
