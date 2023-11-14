@@ -16,7 +16,7 @@ h2 {
 h3 {
   @apply font-semibold text-zinc-950 leading-tight text-2xl mt-0 mb-2;
   font-family: "Zen Kaku Gothic New", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
 }
 p {
   @apply font-normal leading-relaxed text-base text-zinc-950 mt-0 mb-4;
