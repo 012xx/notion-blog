@@ -50,6 +50,7 @@ main {
 .nbr-bold {
   @apply font-bold;
   font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 500;
 }
 /* Hide only scrollbar */
 .nbr-block-code pre::-webkit-scrollbar {
