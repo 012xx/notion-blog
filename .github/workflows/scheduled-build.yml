@@ -1,0 +1,14 @@
+name: Scheduled build
+
+on:
+  schedule:
+    # 画像のリンクが切れる1h毎にビルド
+    - cron: '60 * * * *'
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: curl
+        run: curl --show-error -X POST -d {} "${{ secrets.BUILD_HOOK_URL }}"
